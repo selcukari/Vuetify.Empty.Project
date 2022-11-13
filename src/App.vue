@@ -1,41 +1,76 @@
 <template lang="pug">
-nav
-  router-link(to='/') Home
-  |  |
-  router-link(to='/about') About
-  router-view
-Footer
+.row
+  .col-12
+    #nav
+      router-link(to='/') HomePage
+      |  |
+      router-link(to='/contentadd') ContentAdd
+  .col-12.bg-light
+    router-view
 </template>
+
 <script>
-import Footer from './views/Footer.vue'
+
+import {ref} from "vue";
 
 export default {
-  name: 'App',
   components: {
-    Footer,
   },
-};
+  setup(){
+    const writeComment = ref('');
+    const isLike = ref(false);
+    const like = isLike => {
+      console.log(isLike.value);
+      isLike.value = !isLike
+    }
+    const displayShow = ref(true)
+
+    const clickButton = () => {
+      displayShow.value = false
+    }
+
+    const cards = [
+      { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
+    ];
+
+    return {
+      cards,
+      writeComment,
+      isLike,
+      like,
+      clickButton,
+      displayShow
+    }
+  }
+}
+
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style scoped>
+header {
+  line-height: 1.5;
 }
 
-nav {
-  padding: 30px;
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
 }
 </style>
