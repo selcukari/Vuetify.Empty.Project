@@ -19,31 +19,19 @@
               v-textarea(v-model='writeComment')  
               v-btn(size='small' color='surface-variant' variant='text' icon='mdi-send' @click='sendComment')
 </template>
-<script>
+<script lang="ts" setup>
 import {ref} from 'vue';
 
-export default {
-  name: 'ContentAdd',
-  setup(){
-    const writeComment = ref('');
-    const isLike = ref(false);
-    const like = isLike => {
-      console.log(isLike.value);
-      isLike.value = !isLike
-    }
-
-    const cards = [
-      { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-    ];
-
-    return {
-      cards,
-      writeComment,
-      isLike,
-      like,
-    }
-  }
+const writeComment = ref('fdfdfdf');
+const isLike = ref(false);
+const like = (isLikeValue) => {
+    console.log(isLikeValue);
+    isLike.value = !isLikeValue
 }
+
+const cards = [
+    { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
+];
 
 </script>
 
