@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "start": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@mdi/font": "7.0.96",
     "core-js": "^3.8.3",
     "pinia": "^2.0.23",
@@ -47,6 +48,6 @@
     "type": "git",
     "url": "git+https://github.com/selcukari/Vuetify.Empty.Project.git"
   },
-  "author": "Selçuk Arı",
+  "author": "selcuk.ari",
   "license": "ISC"
 }

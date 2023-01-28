@@ -1,12 +1,11 @@
 <template lang="pug">
-div
-  HelloWorld(
-    name="Selcuk-ari33"
-  )
+HomePage(
+  name="Selcuk-ari33"
+)
 </template>
 
 <script lang="ts" setup>
-  import HelloWorld from '@/components/HelloWorld.vue';
+  import HomePage from '@/components/HomePage.vue';
 
   
 </script>
